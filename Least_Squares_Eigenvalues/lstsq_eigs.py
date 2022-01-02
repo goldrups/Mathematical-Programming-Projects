@@ -74,7 +74,7 @@ def polynomial_fit():
         title = "fit of " + str(orders[i]) + " degree polynomial"
         plt.plot(domain, y_vals, 'b-', lw=2)
         plt.title(title)
-    plt.tight_layout() #if i'm gonna go hard in the lab imma make it look sexy (kendrick lamar)
+    plt.tight_layout()
     plt.show()
 
 
@@ -170,9 +170,9 @@ def qr_algorithm(A, N=50, tol=1e-12):
         elif abs(S[i+1][i]) > tol or np.allclose(abs(S[i+1][i]), tol) == True:
             T = S[i][i] + S[i+1][i+1] #get trace
             D = (S[i][i] * S[i+1][i+1]) - (S[i][i+1] * S[i+1][i]) #get det
-            sqrt_shit = cmath.sqrt(T**2 - 4*D) #right formula?
-            first_eig = T/2 + sqrt_shit/2 #get eig 1
-            second_eig = T/2 - sqrt_shit/2 #get the conjugate
+            sqrt_terms = cmath.sqrt(T**2 - 4*D)
+            first_eig = T/2 + sqrt_terms/2 #get eig 1
+            second_eig = T/2 - sqrt_terms/2 #get the conjugate
             eigs.append(first_eig)
             eigs.append(second_eig)
             i += 1
